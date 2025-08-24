@@ -1,0 +1,241 @@
+/* CAD Foundation - Ultra Light Theme Enhancement */
+/* Apple-inspired, Multi-framework responsive design */
+
+/* Ultra Light Theme Variables Override */
+:root {
+    --ultra-light-bg: #FFFFFF;
+    --ultra-light-surface: #FBFBFD;
+    --ultra-light-border: #E5E5EA;
+    --ultra-light-text: #1D1D1F;
+    --ultra-light-secondary: #6E6E73;
+    --shadow-ultra-light: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+}
+
+/* Cross-browser compatibility fixes */
+@supports (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px)) {
+    .navbar {
+        -webkit-backdrop-filter: blur(30px);
+        backdrop-filter: blur(30px);
+        background: rgba(255, 255, 255, 0.9) !important;
+    }
+}
+
+/* Ultra Light Body Override */
+body {
+    background: var(--ultra-light-bg) !important;
+    color: var(--ultra-light-text) !important;
+}
+
+/* Light Section Backgrounds */
+.section {
+    background: var(--ultra-light-bg) !important;
+}
+
+.card {
+    background: var(--ultra-light-bg) !important;
+    border: 1px solid var(--ultra-light-border) !important;
+    box-shadow: var(--shadow-ultra-light) !important;
+}
+
+.hero {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FBFBFD 50%, #FFFFFF 100%) !important;
+}
+
+/* Enhanced Mobile Optimizations */
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+    }
+    
+    .hero-video {
+        margin: 2rem auto;
+        border-radius: 16px;
+    }
+    
+    .stat-card {
+        padding: 2rem 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .card-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .timeline-content {
+        padding: 1.5rem;
+        margin-left: 1rem;
+    }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 577px) and (max-width: 991px) {
+    .hero {
+        padding: 8rem 2rem 4rem;
+    }
+    
+    .section {
+        padding: 6rem 0;
+    }
+    
+    .timeline::before {
+        left: 3rem;
+    }
+    
+    .timeline-content {
+        margin-left: 5rem;
+    }
+    
+    .timeline-dot {
+        left: 3rem;
+    }
+}
+
+/* Desktop Enhancements */
+@media (min-width: 1400px) {
+    .container-xxl {
+        max-width: 1320px;
+    }
+    
+    .hero-title {
+        font-size: 5.5rem;
+    }
+    
+    .section-title {
+        font-size: 4rem;
+    }
+    
+    .stat-card {
+        padding: 4rem 3rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .footer,
+    .hero::before {
+        display: none !important;
+    }
+    
+    .hero {
+        background: white !important;
+        color: black !important;
+        min-height: auto;
+    }
+    
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+    
+    a {
+        text-decoration: underline !important;
+    }
+}
+
+/* Focus Styles for Accessibility */
+.nav-link:focus,
+.btn-apple:focus,
+.card:focus,
+a:focus {
+    outline: 2px solid var(--apple-blue);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --apple-blue: #0066CC;
+        --apple-gray: #666666;
+    }
+    
+    .card {
+        border: 2px solid var(--apple-gray) !important;
+    }
+}
+
+/* Custom Utilities */
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.6),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -200px; }
+    100% { left: calc(100% + 200px); }
+}
+
+/* Enhanced Animations */
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.heartbeat {
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--apple-gray-6);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--apple-blue);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;
+}
+
+/* Firefox Scrollbar */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--apple-blue) var(--apple-gray-6);
+}
