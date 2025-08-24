@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAD Foundation - Cardiology at Doorsteps</title>
+    <meta name="description" content="CAD Foundation - Building a cardiac disease-free society. 325+ ECG machines across 23 districts in Karnataka serving 1 crore+ beneficiaries.">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#007AFF',
+                        'secondary': '#34C759',
+                        'accent': '#5856D6'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    
+    <!-- Tachyons -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css">
+    
+    <!-- Metro 4 -->
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            overflow-x: hidden;
+        }
+
+        /* Navigation - FIXED PROPERLY */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1rem 0 !important;
+            transition: all 0.3s ease;
+            z-index: 1050;
+        }
+
+        .navbar-scrolled {
+            background: rgba(255, 255, 255, 0.98) !important;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 0 !important;
+        }
+
+        .navbar-brand {
+            display: flex !important;
+            align-items: center !important;
+            font-weight: 700 !important;
+            font-size: 1.5rem !important;
+            color: #007AFF !important;
+            text-decoration: none !important;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #0056b3 !important;
+            transform: scale(1.05);
+        }
+
+        .navbar-logo {
+            height: 50px !important;
+            width: auto !important;
+            margin-right: 12px !important;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover .navbar-logo {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 4px 12px rgba(0, 122, 255, 0.3));
+        }
+
+        .navbar-nav .nav-link {
+            color: #374151 !important;
+            font-weight: 500 !important;
+            padding: 8px 16px !important;
+            margin: 0 4px !important;
+            border-radius: 8px !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: rgba(0, 122, 255, 0.1) !important;
+            color: #007AFF !important;
+            transform: translateY(-2px);
+        }
+
+        .navbar-nav .nav-link.active {
+            background-color: rgba(0, 122, 255, 0.15) !important;
+            color: #007AFF !important;
+        }
+
+        .btn-primary {
+            background-color: #007AFF !important;
+            border-color: #007AFF !important;
+            font-weight: 600 !important;
+            padding: 10px 24px !important;
+            border-radius: 25px !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3 !important;
+            border-color: #0056b3 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 122, 255, 0.3) !important;
+        }
+
+        .navbar-toggler {
+            border: none !important;
+            padding: 8px 12px !important;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none !important;
+        }
+
+        /* HERO SECTION WITH PROPER VIDEO PLAYER */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(0, 122, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(88, 86, 214, 0.05) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px); 
+            }
+            50% { 
+                transform: translateY(-20px); 
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: #1a202c;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.125rem, 3vw, 1.5rem);
+            color: #6b7280;
+            margin-bottom: 32px;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #007AFF, #5856D6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* VIDEO PLAYER - COMPLETELY FIXED NO GLITCHES */
+        .video-container {
+            position: relative;
+            max-width: 800px;
+            margin: 48px auto 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            background: #000;
+            cursor: pointer;
+        }
+
+        .video-container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 32px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe,
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-placeholder:hover {
+            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+        }
+
+        .video-thumbnail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .video-info {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .video-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .video-subtitle {
+            font-size: 16px;
+            margin-bottom: 4px;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .video-description {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 3px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .play-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        /* STATS SECTION - FIXED */
+        .stats-section {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .stat-card {
+            background: #ffffff;
+            padding: 40px 32px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f3f4f6;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #007AFF, #5856D6, #34C759);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-color: #007AFF;
+        }
+
+        .stat-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover .stat-icon {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #007AFF;
+            line-height: 1;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .stat-label {
+            font-weight: 600;
+            color: #6b7280;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        /* SERVICES SECTION - FIXED */
+        .services-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 40px 32px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f3f4f6;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+            margin: 0 auto 24px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a202c;
+        }
+
+        .service-description {
+            color: #6b7280;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* SECTION TITLES - FIXED */
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #1a202c;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #6b7280;
+            text-align: center;
+            margin-bottom: 64px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* FOOTER - FIXED */
+        .footer {
+            background: #1f2937;
+            color: #ffffff;
+            padding: 60px 0 20px;
+        }
+
+        .footer h5 {
+            color: #007AFF;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #007AFF;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 122, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #007AFF;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* RESPONSIVE DESIGN - FIXED */
+        @media (max-width: 992px) {
+            .hero-section {
+                padding: 120px 20px 60px;
+            }
+            
+            .navbar-collapse {
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-radius: 12px;
+                margin-top: 16px;
+                padding: 20px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            }
+            
+            .navbar-nav .nav-link {
+                margin: 4px 0 !important;
+                text-align: center;
+            }
+            
+            .btn-primary {
+                width: 100%;
+                margin-top: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stats-section,
+            .services-section {
+                padding: 60px 0;
+            }
+            
+            .stat-card,
+            .service-card {
+                padding: 32px 24px;
+                margin-bottom: 24px;
+            }
+            
+            .navbar-logo {
+                height: 40px !important;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .video-container {
+                margin: 32px auto 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 36px;
+            }
+            
+            .navbar-logo {
+                height: 35px !important;
+            }
+            
+            .navbar-brand {
+                font-size: 1.25rem !important;
+            }
+        }
+
+        /* ANIMATIONS */
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* LOADING STATE */
+        .loading {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .loading.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVIGATION - COMPLETELY FIXED -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="assets/img/logo.png" alt="CAD Foundation" class="navbar-logo">
+                <span>CAD Foundation</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#stats">Impact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a href="#donate" class="btn btn-primary">
+                            <i class="fas fa-heart me-1"></i>Donate Now
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION WITH PROPER VIDEO PLAYER -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="hero-content text-center">
+                        <h1 class="hero-title animate-fade-in">
+                            Building a <span class="text-gradient">Cardiac Disease</span><br>
+                            Free Society
+                        </h1>
+                        <p class="hero-subtitle animate-fade-in mx-auto">
+                            CAD Foundation has revolutionized cardiac care in Karnataka by installing 325+ ECG machines 
+                            across 23 districts, serving over 1 crore beneficiaries with world-class cardiac diagnosis 
+                            at their doorstep.
+                        </p>
+                        
+                        <div class="d-flex gap-3 justify-content-center flex-wrap mb-4">
+                            <a href="#about" class="btn btn-primary btn-lg">
+                                <i class="fas fa-info-circle me-2"></i>Learn More
+                            </a>
+                            <a href="#contact" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-phone me-2"></i>Contact Us
+                            </a>
+                        </div>
+
+                        <!-- COMPLETELY FIXED VIDEO PLAYER - NO GLITCHES -->
+                        <div class="video-container" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="video-wrapper">
+                                <div class="video-placeholder" id="videoPlaceholder">
+                                    <div class="video-info">
+                                        <h3 class="video-title">HEART CARE AT YOUR DOORSTEP</h3>
+                                        <p class="video-subtitle">Dr. Padmanabha Kamath - CAD Foundation</p>
+                                        <p class="video-description">Building a cardiac disease free society</p>
+                                    </div>
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                                <iframe 
+                                    id="heroVideo" 
+                                    src="" 
+                                    data-src="https://www.youtube.com/embed/XYZ123ABC456?enablejsapi=1&controls=1&modestbranding=1&rel=0&autoplay=1" 
+                                    title="CAD Foundation - Dr. Padmanabha Kamath - Heart Care at Your Doorstep"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                    style="display: none;">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION - COMPLETELY FIXED -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="stat-card">
+                        <div class="stat-icon text-primary">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <span class="stat-number" data-count="325">0</span>
+                        <div class="stat-label">ECG Machines Installed</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-card">
+                        <div class="stat-icon text-success">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <span class="stat-number" data-count="23">0</span>
+                        <div class="stat-label">Districts in Karnataka</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-card">
+                        <div class="stat-icon text-info">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <span class="stat-number" data-count="10000000">0</span>
+                        <div class="stat-label">Beneficiaries Served</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card">
+                        <div class="stat-icon text-warning">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <span class="stat-number" data-count="500">0</span>
+                        <div class="stat-label">Healthcare Centers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="services-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="section-title" data-aos="fade-up">About CAD Foundation</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        Pioneering cardiac care accessibility through innovative technology and community-driven healthcare solutions.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-content">
+                        <h3 class="mb-4 text-gradient">Our Mission</h3>
+                        <p class="lead mb-4">
+                            To create a cardiac disease-free society by making quality cardiac diagnosis accessible 
+                            to every individual, regardless of their geographical location or economic status.
+                        </p>
+                        <p class="mb-4">
+                            Founded by Dr. Padmanabha Kamath, CAD Foundation has transformed cardiac care delivery 
+                            in Karnataka through innovative technology deployment and community health initiatives.
+                        </p>
+                        
+                        <div class="row g-3 mt-4">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle text-success me-3 fs-4"></i>
+                                    <div>
+                                        <strong>Quality Care</strong><br>
+                                        <small class="text-muted">World-class standards</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-shield-alt text-primary me-3 fs-4"></i>
+                                    <div>
+                                        <strong>Accessibility</strong><br>
+                                        <small class="text-muted">Doorstep delivery</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-users text-info me-3 fs-4"></i>
+                                    <div>
+                                        <strong>Community Focus</strong><br>
+                                        <small class="text-muted">People-centered</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-lightbulb text-warning me-3 fs-4"></i>
+                                    <div>
+                                        <strong>Innovation</strong><br>
+                                        <small class="text-muted">Technology-driven</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="text-center">
+                        <img src="assets/img/logo.png" alt="CAD Foundation" class="img-fluid" style="max-height: 300px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION - COMPLETELY FIXED -->
+    <section class="stats-section" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="section-title" data-aos="fade-up">Our Services</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        Comprehensive cardiac care solutions delivered with precision, compassion, and cutting-edge technology.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #007AFF, #5856D6);">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h4 class="service-title">ECG Testing</h4>
+                        <p class="service-description">
+                            State-of-the-art electrocardiogram testing with instant results and expert analysis 
+                            available at your doorstep across Karnataka.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #34C759, #5AC8FA);">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <h4 class="service-title">Cardiac Consultation</h4>
+                        <p class="service-description">
+                            Expert cardiac consultation by qualified cardiologists with personalized treatment 
+                            plans and continuous monitoring support.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #FF9500, #FF3B30);">
+                            <i class="fas fa-ambulance"></i>
+                        </div>
+                        <h4 class="service-title">Emergency Care</h4>
+                        <p class="service-description">
+                            24/7 emergency cardiac care services with rapid response teams and 
+                            advanced life support equipment.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #5856D6, #FF2D92);">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 class="service-title">Health Monitoring</h4>
+                        <p class="service-description">
+                            Continuous health monitoring programs with digital health records and 
+                            preventive care recommendations.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #5AC8FA, #007AFF);">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4 class="service-title">Health Education</h4>
+                        <p class="service-description">
+                            Community health education programs focusing on cardiac disease prevention 
+                            and lifestyle modification.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #FFCC00, #FF9500);">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4 class="service-title">Telemedicine</h4>
+                        <p class="service-description">
+                            Advanced telemedicine platform connecting rural patients with specialists 
+                            through secure video consultations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER - COMPLETELY FIXED -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5><i class="fas fa-heart me-2"></i>CAD Foundation</h5>
+                    <p class="mb-4">Building a cardiac disease-free society through innovative healthcare solutions and community-driven initiatives serving over 1 crore beneficiaries across Karnataka.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home">Home</a></li>
+                        <li class="mb-2"><a href="#about">About Us</a></li>
+                        <li class="mb-2"><a href="#services">Services</a></li>
+                        <li class="mb-2"><a href="#stats">Impact</a></li>
+                        <li class="mb-2"><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="text-white mb-3">Contact Info</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fas fa-phone me-2"></i>
+                            <a href="tel:+91-XXXXX-XXXXX">+91-XXXXX-XXXXX</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:info@cadfoundation.org">info@cadfoundation.org</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Karnataka, India
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-clock me-2"></i>
+                            24/7 Emergency Services
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="text-white mb-3">Newsletter</h6>
+                    <p class="mb-3">Subscribe to get health tips and updates about our services.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Enter your email" aria-label="Email">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <small class="text-muted">We respect your privacy. Unsubscribe anytime.</small>
+                </div>
+            </div>
+            
+            <hr class="my-4 border-secondary">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">
+                        &copy; 2024 CAD Foundation. All rights reserved.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0 text-muted">
+                        Made with <i class="fas fa-heart text-danger"></i> for a healthier Karnataka
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT - COMPLETELY FIXED -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+
+    <script>
+        // Initialize AOS with proper settings
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-out-cubic',
+                once: true,
+                mirror: false,
+                anchorPlacement: 'top-bottom'
+            });
+        });
+
+        // NAVBAR SCROLL EFFECT - COMPLETELY GLITCH FREE
+        let lastScrollTop = 0;
+        let ticking = false;
+        
+        function updateNavbar() {
+            const navbar = document.getElementById('mainNavbar');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            try {
+                if (scrollTop > 50) {
+                    navbar.classList.add('navbar-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                }
+                
+                // Update active nav links
+                updateActiveNavLink();
+                
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            } catch (error) {
+                console.error('Navbar update error:', error);
+            }
+            
+            ticking = false;
+        }
+        
+        function requestNavbarUpdate() {
+            if (!ticking) {
+                requestAnimationFrame(updateNavbar);
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', requestNavbarUpdate, { passive: true });
+
+        // UPDATE ACTIVE NAVIGATION LINK
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // SMOOTH SCROLLING - FIXED
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // COUNTER ANIMATION - COMPLETELY GLITCH FREE
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            let startTime = null;
+            let animationId = null;
+            
+            function animate(currentTime) {
+                try {
+                    if (!startTime) startTime = currentTime;
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    // Easing function for smooth animation
+                    const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                    start = target * easeOutQuart;
+                    
+                    // Format and display number
+                    if (target >= 10000000) {
+                        element.textContent = (start / 10000000).toFixed(1) + 'Cr+';
+                    } else if (target >= 1000) {
+                        element.textContent = Math.floor(start).toLocaleString() + '+';
+                    } else {
+                        element.textContent = Math.floor(start);
+                    }
+                    
+                    if (progress < 1) {
+                        animationId = requestAnimationFrame(animate);
+                    } else {
+                        // Ensure final value is correct
+                        if (target >= 10000000) {
+                            element.textContent = (target / 10000000).toFixed(1) + 'Cr+';
+                        } else if (target >= 1000) {
+                            element.textContent = target.toLocaleString() + '+';
+                        } else {
+                            element.textContent = target;
+                        }
+                    }
+                } catch (error) {
+                    console.error('Counter animation error:', error);
+                    if (animationId) {
+                        cancelAnimationFrame(animationId);
+                    }
+                }
+            }
+            
+            animationId = requestAnimationFrame(animate);
+        }
+
+        // INTERSECTION OBSERVER FOR COUNTERS
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-count'));
+                    animateCounter(counter, target);
+                    observer.unobserve(counter);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all stat counters
+        document.querySelectorAll('.stat-number').forEach(counter => {
+            observer.observe(counter);
+        });
+
+        // VIDEO PLAYER - COMPLETELY FIXED NO GLITCHES
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoPlaceholder = document.getElementById('videoPlaceholder');
+            const heroVideo = document.getElementById('heroVideo');
+            
+            if (videoPlaceholder && heroVideo) {
+                videoPlaceholder.addEventListener('click', function() {
+                    try {
+                        // Hide placeholder with smooth transition
+                        videoPlaceholder.style.opacity = '0';
+                        videoPlaceholder.style.transform = 'scale(0.95)';
+                        
+                        setTimeout(() => {
+                            videoPlaceholder.style.display = 'none';
+                            heroVideo.style.display = 'block';
+                            
+                            // Load video source for autoplay
+                            const videoSrc = heroVideo.getAttribute('data-src');
+                            if (videoSrc) {
+                                heroVideo.src = videoSrc;
+                            }
+                            
+                            // Smooth video appearance
+                            heroVideo.style.opacity = '0';
+                            setTimeout(() => {
+                                heroVideo.style.transition = 'opacity 0.5s ease';
+                                heroVideo.style.opacity = '1';
+                            }, 100);
+                            
+                        }, 300);
+                    } catch (error) {
+                        console.error('Video player error:', error);
+                        // Fallback: direct video show
+                        videoPlaceholder.style.display = 'none';
+                        heroVideo.style.display = 'block';
+                    }
+                });
+            }
+        });
+
+        // MOBILE MENU CLOSE ON LINK CLICK
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navbarCollapse = document.getElementById('navbarNav');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                        toggle: false
+                    });
+                    bsCollapse.hide();
+                }
+            });
+        });
+
+        // LOADING ANIMATION
+        window.addEventListener('load', function() {
+            document.querySelectorAll('.loading').forEach(element => {
+                element.classList.add('loaded');
+            });
+        });
+
+        // ERROR HANDLING
+        window.addEventListener('error', function(e) {
+            console.error('JavaScript error:', e.error);
+        });
+
+        // PERFORMANCE MONITORING
+        window.addEventListener('load', function() {
+            if (performance.getEntriesByType) {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                if (perfData) {
+                    console.log('Page load time:', Math.round(perfData.loadEventEnd - perfData.loadEventStart), 'ms');
+                }
+            }
+        });
+
+        // ACCESSIBILITY - KEYBOARD NAVIGATION
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-navigation');
+            }
+        });
+
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-navigation');
+        });
+
+        // FORM VALIDATION (if forms are added later)
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // LAZY LOADING FOR IMAGES (if needed)
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazy');
+                            observer.unobserve(img);
+                        }
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
+</body>
+</html>

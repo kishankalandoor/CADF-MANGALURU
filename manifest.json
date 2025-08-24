@@ -1,0 +1,34 @@
+{
+    "name": "CAD Foundation - Cardiology at Doorsteps",
+    "short_name": "CAD Foundation",
+    "description": "Building a cardiac disease free society by helping the underprivileged. 325+ ECG machines across 23 districts in Karnataka.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#007AFF",
+    "theme_color": "#007AFF",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "assets/img/favicon.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/img/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/img/logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["health", "medical", "nonprofit"],
+    "lang": "en",
+    "dir": "ltr",
+    "scope": "/",
+    "related_applications": [],
+    "prefer_related_applications": false
+}

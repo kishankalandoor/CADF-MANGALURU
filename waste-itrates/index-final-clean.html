@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAD Foundation - Cardiology at Doorsteps | Building a Cardiac Disease Free Society</title>
+    <meta name="description" content="CAD Foundation has installed 325+ ECG machines across 23 districts in Karnataka, serving 1 crore+ beneficiaries. Join Dr. Padmanabha Kamath's mission for a cardiac disease-free society.">
+    <meta name="theme-color" content="#007AFF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="light-content">
+    
+    <!-- Bootstrap 5 - Core Framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Clean Styles -->
+    <link rel="stylesheet" href="assets/css/clean.css">
+    
+    <!-- PWA Assets -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="manifest" href="manifest-ultra.json">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="assets/img/logo.png" alt="CAD Foundation Logo" class="navbar-logo">
+                <span>CAD Foundation</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#impact">Impact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a href="#donate" class="btn btn-primary-custom">
+                            <i class="fas fa-heart"></i>
+                            Donate Now
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="hero-content text-center" data-aos="fade-up" data-aos-duration="800">
+                        <h1 class="hero-title">
+                            Building a <span class="text-gradient">Cardiac Disease</span><br>
+                            Free Society
+                        </h1>
+                        <p class="hero-subtitle mx-auto">
+                            CAD Foundation has revolutionized cardiac care in Karnataka by installing 325+ ECG machines across 23 districts, 
+                            serving over 1 crore beneficiaries with world-class cardiac diagnosis at their doorstep.
+                        </p>
+                        
+                        <div class="d-flex gap-3 justify-content-center flex-wrap mb-4">
+                            <a href="#about" class="btn btn-primary-custom">
+                                <i class="fas fa-info-circle"></i>
+                                Learn More
+                            </a>
+                            <a href="#contact" class="btn btn-outline-custom">
+                                <i class="fas fa-phone"></i>
+                                Get Involved
+                            </a>
+                        </div>
+
+                        <!-- Video Player -->
+                        <div class="hero-video" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="video-container" id="videoContainer">
+                                <div class="video-placeholder" onclick="loadVideo()">
+                                    <i class="fas fa-play play-icon"></i>
+                                    <div>
+                                        <strong>CAD Foundation - Cardiology at Doorsteps</strong><br>
+                                        <span>Click to watch our mission video</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <span class="stat-number" data-count="325">0</span>
+                        <div class="stat-label">ECG Machines Installed</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="color: #34C759;">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <span class="stat-number" data-count="23">0</span>
+                        <div class="stat-label">Districts Covered in Karnataka</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="color: #FF9500;">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <span class="stat-number" data-count="10000000">0</span>
+                        <div class="stat-label">Beneficiaries Served</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="color: #FF3B30;">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <span class="stat-number" data-count="500">0</span>
+                        <div class="stat-label">Healthcare Centers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section py-5 bg-light" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold text-primary" data-aos="fade-up">About CAD Foundation</h2>
+                    <p class="lead text-muted" data-aos="fade-up" data-aos-delay="100">
+                        Pioneering cardiac care accessibility through innovative technology and community-driven healthcare solutions.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-content">
+                        <h3 class="h2 mb-4 text-gradient">Our Mission</h3>
+                        <p class="lead mb-4">
+                            To create a cardiac disease-free society by making quality cardiac diagnosis accessible 
+                            to every individual, regardless of their geographical location or economic status.
+                        </p>
+                        <p class="mb-4">
+                            Founded by Dr. Padmanabha Kamath, CAD Foundation has transformed cardiac care delivery 
+                            in Karnataka through innovative technology deployment and community health initiatives.
+                        </p>
+                        
+                        <div class="row g-4 mt-4">
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle text-success me-3 fs-4"></i>
+                                    <div>
+                                        <h6 class="mb-1">Quality Care</h6>
+                                        <small class="text-muted">World-class standards</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-users text-primary me-3 fs-4"></i>
+                                    <div>
+                                        <h6 class="mb-1">Community Focus</h6>
+                                        <small class="text-muted">Serving all communities</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-globe text-info me-3 fs-4"></i>
+                                    <div>
+                                        <h6 class="mb-1">Wide Reach</h6>
+                                        <small class="text-muted">Across Karnataka</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-heart text-danger me-3 fs-4"></i>
+                                    <div>
+                                        <h6 class="mb-1">Compassionate</h6>
+                                        <small class="text-muted">Care with empathy</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="position-relative">
+                        <img src="assets/img/about-image.jpg" alt="About CAD Foundation" 
+                             class="img-fluid rounded shadow-lg"
+                             style="border-radius: 1rem !important;">
+                        <div class="position-absolute bottom-0 start-0 p-4">
+                            <div class="bg-white rounded p-3 shadow">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary rounded-circle p-2 me-3">
+                                        <i class="fas fa-award text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">Award Winning</h6>
+                                        <small class="text-muted">Healthcare Initiative</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section Placeholder -->
+    <section class="section py-5" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="display-5 fw-bold text-primary mb-4" data-aos="fade-up">Get In Touch</h2>
+                    <p class="lead text-muted mb-4" data-aos="fade-up" data-aos-delay="100">
+                        Ready to join our mission? Contact us today to learn how you can make a difference.
+                    </p>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <a href="mailto:info@cadfoundation.org" class="btn btn-primary-custom me-3">
+                            <i class="fas fa-envelope"></i>
+                            Email Us
+                        </a>
+                        <a href="tel:+91-9999999999" class="btn btn-outline-custom">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 CAD Foundation. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main-clean.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw-ultra.js')
+                    .then(function(registration) {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
